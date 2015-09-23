@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'eclipse'
 
 repositories {
     jcenter()
@@ -7,4 +8,11 @@ repositories {
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.12'
     testCompile 'junit:junit:4.12'
+}
+
+sourceSets {
+    //create a source set that gets compiled but doesn't automatically run... a playground sort of
+    example {
+        java.srcDir file('src/example/java')
+    }
 }
