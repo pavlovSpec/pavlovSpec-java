@@ -1,5 +1,11 @@
-apply plugin: 'java'
-apply plugin: 'eclipse'
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'eclipse'
+    id 'maven-publish'
+}
+
+defaultTasks 'clean', 'build', 'jacoco', 'publish'
 
 repositories {
     jcenter()
@@ -16,3 +22,5 @@ sourceSets {
         java.srcDir file('src/example/java')
     }
 }
+
+version '1.0.0-SNAPSHOT'
